@@ -15,5 +15,9 @@
         "readable.js"
       ]
     }
+  ],
+  "permissions": [
+    "*://*/*",
+    "webRequest"
   ]
 }
