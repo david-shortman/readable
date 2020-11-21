@@ -7,15 +7,20 @@ const replaceOnDocument = (replacements, keys, {target = document.body} = {}) =>
       .filter(({nodeType}) => nodeType === document.TEXT_NODE)
       .forEach((textNode) => {
         const oldContent = textNode.textContent.slice();
-        // TODO: replace more efficiently
-        keys.forEach(key => textNode.textContent = textNode.textContent.replace(key, replacements[key]))
-        if (textNode.textContent !== oldContent) {
-          console.log('diff', oldContent, textNode.textContent);
-        }
+        let newContent = '';
+        [...oldContent].forEach((oldCharacter, i) => {
+          const replacement = replacements[oldCharacter];
+          if (replacement) {
+            newContent += replacement;
+          } else {
+            newContent += oldCharacter;
+          }
+        });
+        textNode.textContent = newContent;
       }));
   };
 
-// TODO: dynamically load this
+// TODO: dynamically load from a CDN
 const characterMap = {
   "\ud835\udd1e": "a",
   "\ud835\udd1f": "b",
@@ -1195,7 +1200,7 @@ const characterMap = {
   "\u15f4": "E",
   "\u0123": "G",
   "\ud835\udcbb": "F"
-}; 
+};
 
 replaceOnDocument(characterMap, Object.keys(characterMap));
 
