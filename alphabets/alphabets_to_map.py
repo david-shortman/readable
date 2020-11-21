@@ -16,7 +16,7 @@ upperAlphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 lowercase = True
 for line in lines:
     for x in range(26):
-        if line[x].lower() != lowerAlphabet[x]: # avoid actual ascii characters
+        if not line[x].lower() in lowerAlphabet: # avoid actual ascii characters
             if lowercase:
                 characterMap[line[x]] = lowerAlphabet[x]
             else:
