@@ -1,4 +1,4 @@
-const replaceOnActiveTab = (replacements, keys, { target = document.body } = {}) => {
+const replaceCharactersOnDocument = (replacements, { target = document.body } = {}) => {
   [
     target,
     ...target.querySelectorAll("*:not(script):not(noscript):not(style)")
@@ -24,18 +24,22 @@ let characterMap;
 
 const browser = window['browser'] || chrome;
 
-function onDOMChanged() {
-  browser.runtime.sendMessage("DOM_CHANGED");
+function onDOMChanged(mutations) {
+  if (mutations.filter(mut => mut.type !== 'attributes').length) {
+    browser.runtime.sendMessage("DOM_CHANGED");
+  }
 }
 
 function makeDocumentReadable() {
   if (characterMap) {
-    replaceOnActiveTab(characterMap, Object.keys(characterMap));
+    replaceCharactersOnDocument(characterMap);
   } else {
-    fetch('https://raw.githubusercontent.com/david-shortman/readable/main/alphabets/character-map.json').then(data => data.json()).then(res => {
-      characterMap = res;
-      replaceOnActiveTab(characterMap, Object.keys(characterMap));
-    });
+    fetch('https://raw.githubusercontent.com/david-shortman/readable/main/alphabets/character-map.json')
+      .then(response => response.json())
+      .then(map => {
+        characterMap = map;
+        replaceCharactersOnDocument(characterMap);
+      });
   }
 }
 
