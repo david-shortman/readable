@@ -48,14 +48,16 @@ function makeDocumentReadable() {
   if (characterMap) {
     makeTextNodesOnDocumentReadable(characterMap);
   } else {
-    fetch('https://raw.githubusercontent.com/david-shortman/readable/main/alphabets/character-map.json')
-      .then(response => response.json())
-      .then(map => {
-        characterMap = map;
-        makeTextNodesOnDocumentReadable(characterMap);
-      });
+    browser.runtime.sendMessage("NEED_CHARACTER_MAP");
   }
 }
+
+browser.runtime.onMessage.addListener(function (message) {
+  if (message.type === "CHARACTER_MAP_READY") {
+    characterMap = message.characterMap;
+    makeDocumentReadable();
+  }
+});
 
 browser.runtime.onMessage.addListener(function (message) {
   if (message === 'DOM_CHANGED_ON_ACTIVE_TAB') {
