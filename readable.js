@@ -7,7 +7,7 @@ const replaceCharactersOnDocument = (replacements, { target = document.body } = 
     .forEach((textNode) => {
       const oldContent = textNode.textContent.slice();
       let newContent = '';
-      [...oldContent].forEach((oldCharacter, i) => {
+      [...oldContent].forEach(oldCharacter => {
         const replacement = replacements[oldCharacter];
         if (replacement) {
           newContent += replacement;
