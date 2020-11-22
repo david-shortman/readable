@@ -1,4 +1,5 @@
 const isChrome = !window['browser'] && !!chrome;
+// Prefer the more standard `browser` before Chrome API
 const browser = isChrome ? chrome : window['browser'];
 
 function onGotCurrentTab(currentTabOrTabs) {
