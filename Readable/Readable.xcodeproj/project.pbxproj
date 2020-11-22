@@ -14,15 +14,11 @@
 		E97117C82569FB36009F1589 /* Readable Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E97117C72569FB36009F1589 /* Readable Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E97117CD2569FB36009F1589 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97117CC2569FB36009F1589 /* Cocoa.framework */; };
 		E97117D02569FB36009F1589 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97117CF2569FB36009F1589 /* SafariWebExtensionHandler.swift */; };
-		E97117E72569FB37009F1589 /* alphabets in Resources */ = {isa = PBXBuildFile; fileRef = E97117DD2569FB37009F1589 /* alphabets */; };
 		E97117E82569FB37009F1589 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E97117DE2569FB37009F1589 /* LICENSE */; };
-		E97117E92569FB37009F1589 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E97117DF2569FB37009F1589 /* README.md */; };
 		E97117EA2569FB37009F1589 /* readable.js in Resources */ = {isa = PBXBuildFile; fileRef = E97117E02569FB37009F1589 /* readable.js */; };
-		E97117EB2569FB37009F1589 /* promo.png in Resources */ = {isa = PBXBuildFile; fileRef = E97117E12569FB37009F1589 /* promo.png */; };
 		E97117EC2569FB37009F1589 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = E97117E22569FB37009F1589 /* icons */; };
 		E97117ED2569FB37009F1589 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = E97117E32569FB37009F1589 /* manifest.json */; };
 		E97117EE2569FB37009F1589 /* readable_background.js in Resources */ = {isa = PBXBuildFile; fileRef = E97117E42569FB37009F1589 /* readable_background.js */; };
-		E97117EF2569FB37009F1589 /* Readable in Resources */ = {isa = PBXBuildFile; fileRef = E97117E52569FB37009F1589 /* Readable */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,15 +58,11 @@
 		E97117CF2569FB36009F1589 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
 		E97117D12569FB36009F1589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E97117D22569FB36009F1589 /* Readable_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Readable_Extension.entitlements; sourceTree = "<group>"; };
-		E97117DD2569FB37009F1589 /* alphabets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = alphabets; path = ../../alphabets; sourceTree = "<group>"; };
 		E97117DE2569FB37009F1589 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../../LICENSE; sourceTree = "<group>"; };
-		E97117DF2569FB37009F1589 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		E97117E02569FB37009F1589 /* readable.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = readable.js; path = ../../readable.js; sourceTree = "<group>"; };
-		E97117E12569FB37009F1589 /* promo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = promo.png; path = ../../promo.png; sourceTree = "<group>"; };
 		E97117E22569FB37009F1589 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = ../../icons; sourceTree = "<group>"; };
 		E97117E32569FB37009F1589 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../manifest.json; sourceTree = "<group>"; };
 		E97117E42569FB37009F1589 /* readable_background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = readable_background.js; path = ../../readable_background.js; sourceTree = "<group>"; };
-		E97117E52569FB37009F1589 /* Readable */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readable; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,15 +138,11 @@
 		E97117DC2569FB37009F1589 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E97117DD2569FB37009F1589 /* alphabets */,
 				E97117DE2569FB37009F1589 /* LICENSE */,
-				E97117DF2569FB37009F1589 /* README.md */,
 				E97117E02569FB37009F1589 /* readable.js */,
-				E97117E12569FB37009F1589 /* promo.png */,
 				E97117E22569FB37009F1589 /* icons */,
 				E97117E32569FB37009F1589 /* manifest.json */,
 				E97117E42569FB37009F1589 /* readable_background.js */,
-				E97117E52569FB37009F1589 /* Readable */,
 			);
 			name = Resources;
 			path = "Readable Extension";
@@ -250,14 +238,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E97117EE2569FB37009F1589 /* readable_background.js in Resources */,
-				E97117E92569FB37009F1589 /* README.md in Resources */,
 				E97117ED2569FB37009F1589 /* manifest.json in Resources */,
 				E97117E82569FB37009F1589 /* LICENSE in Resources */,
-				E97117EB2569FB37009F1589 /* promo.png in Resources */,
-				E97117EF2569FB37009F1589 /* Readable in Resources */,
 				E97117EC2569FB37009F1589 /* icons in Resources */,
 				E97117EA2569FB37009F1589 /* readable.js in Resources */,
-				E97117E72569FB37009F1589 /* alphabets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,8 +405,10 @@
 		E97117D62569FB36009F1589 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Readable Extension/Readable_Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = V4FL6SW725;
 				INFOPLIST_FILE = "Readable Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -431,7 +417,8 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.Readable.Extension;
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shortman.Readable.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -441,8 +428,10 @@
 		E97117D72569FB36009F1589 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Readable Extension/Readable_Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = V4FL6SW725;
 				INFOPLIST_FILE = "Readable Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -451,7 +440,8 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.Readable.Extension;
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shortman.Readable.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -468,6 +458,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = V4FL6SW725;
 				INFOPLIST_FILE = Readable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,7 +466,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.Readable;
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shortman.Readable.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -492,6 +484,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = V4FL6SW725;
 				INFOPLIST_FILE = Readable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -499,7 +492,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.Readable;
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shortman.Readable.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
