@@ -65,7 +65,10 @@ browser.runtime.onMessage.addListener(function (message) {
   }
 });
 
-// Watch the entire body for changes
+// Initialize page once
+makeDocumentReadable();
+
+// Then watch the entire body for changes
 const observer = new MutationObserver(onDOMChanged);
 observer.observe(document.body, {
   childList: true,

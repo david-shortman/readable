@@ -2,7 +2,7 @@ const isChrome = !window['browser'] && !!chrome;
 // Prefer the more standard `browser` before Chrome API
 const browser = isChrome ? chrome : window['browser'];
 
-const baseUrl = 'https://readable-416c3.web.app';
+const baseUrl = 'https://readableextension.app';
 const characterMapResourceUri = '/character-map.json';
 
 function sendMessageToCurrentTab(currentTabId, message) {
