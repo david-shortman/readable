@@ -1,10 +1,12 @@
 {
   "manifest_version": 2,
   "name": "Readable",
-  "version": "1.0",
-  "description": "Converts custom font characters to standard ASCII characters.",
+  "version": "1.1",
+  "description": "Converts custom font characters to standard alphabetic characters.",
   "icons": {
-    "48": "icons/border-48.png"
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
   },
   "content_scripts": [
     {
