@@ -1,5 +1,4 @@
 const isChrome = !window['browser'] && !!chrome;
-console.log(isChrome);
 const browser = isChrome ? chrome : window['browser'];
 
 function onGotCurrentTab(currentTabOrTabs) {
