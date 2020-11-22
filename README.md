@@ -6,4 +6,8 @@ Readable is a Web Extension that converts "custom font" text on webpages to stan
 
 [Example](https://jsfiddle.net/w029hxp4/1/)
 
-![](promo.png)
+## Installation
+
+The extension is undergoing review in the Chrome Web Store, the Mozilla add-ons distribution site, and the macOS App Store.
+
+The source code can be downloaded and then [imported as an unpacked extension into Chrome](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/).
