@@ -3,7 +3,7 @@ const replaceOnActiveTab = (replacements, keys, { target = document.body } = {})
     target,
     ...target.querySelectorAll("*:not(script):not(noscript):not(style)")
   ].forEach(({ childNodes: [...nodes] }) => nodes
-    .filter(({ nodeType }) => nodeType === document.TEXT_NODE)
+    .filter(({ nodeType, rdblHasReplaced }) => nodeType === document.TEXT_NODE && !rdblHasReplaced)
     .forEach((textNode) => {
       const oldContent = textNode.textContent.slice();
       let newContent = '';
@@ -16,6 +16,7 @@ const replaceOnActiveTab = (replacements, keys, { target = document.body } = {})
         }
       });
       textNode.textContent = newContent;
+      textNode['rdblHasReplaced'] = true;
     }));
 };
 
@@ -23,19 +24,32 @@ let characterMap;
 
 const browser = window['browser'] || chrome;
 
-function updatePage() {
-  replaceOnActiveTab(characterMap, Object.keys(characterMap));
+function onDOMChanged() {
+  browser.runtime.sendMessage("DOM_CHANGED");
+}
+
+function makeDocumentReadable() {
+  if (characterMap) {
+    replaceOnActiveTab(characterMap, Object.keys(characterMap));
+  } else {
+    fetch('https://raw.githubusercontent.com/david-shortman/readable/main/alphabets/character-map.json').then(data => data.json()).then(res => {
+      characterMap = res;
+      replaceOnActiveTab(characterMap, Object.keys(characterMap));
+    });
+  }
 }
 
 browser.runtime.onMessage.addListener(function (message) {
-  if (message === 'updateCurrentTab') {
-    if (characterMap) {
-      replaceOnActiveTab(characterMap, Object.keys(characterMap));
-    } else {
-      fetch('https://raw.githubusercontent.com/david-shortman/readable/main/alphabets/character-map.json').then(data => data.json()).then(res => {
-        characterMap = res;
-        replaceOnActiveTab(characterMap, Object.keys(characterMap));
-      });
-    }
+  if (message === 'DOM_CHANGED_ON_ACTIVE_TAB') {
+    makeDocumentReadable();
   }
+});
+
+const observer = new MutationObserver(onDOMChanged);
+
+observer.observe(document.body, {
+  childList: true,
+  attributes: true,
+  subtree: true,
+  characterData: true
 });

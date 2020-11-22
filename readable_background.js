@@ -9,14 +9,16 @@ function onGotCurrentTab(currentTabOrTabs) {
         currentTabId = currentTabOrTabs.id;
     }
     if (currentTabId >= 0) {
-        browser.tabs.sendMessage(currentTabId, "updateCurrentTab");
+        browser.tabs.sendMessage(currentTabId, "DOM_CHANGED_ON_ACTIVE_TAB");
     }
 }
 
-setInterval(function () {
-    if (isChrome) {
-        browser.tabs.getSelected(onGotCurrentTab);
-    } else {
-        browser.tabs.query({ active: true }).then(onGotCurrentTab)
+browser.runtime.onMessage.addListener(function (message) {
+    if (message === 'DOM_CHANGED') {
+        if (isChrome) {
+            browser.tabs.getSelected(onGotCurrentTab);
+        } else {
+            browser.tabs.query({ active: true }).then(onGotCurrentTab)
+        }
     }
-}, 5000);
+  });

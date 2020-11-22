@@ -23,7 +23,6 @@
 		E97117ED2569FB37009F1589 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = E97117E32569FB37009F1589 /* manifest.json */; };
 		E97117EE2569FB37009F1589 /* readable_background.js in Resources */ = {isa = PBXBuildFile; fileRef = E97117E42569FB37009F1589 /* readable_background.js */; };
 		E97117EF2569FB37009F1589 /* Readable in Resources */ = {isa = PBXBuildFile; fileRef = E97117E52569FB37009F1589 /* Readable */; };
-		E97117F02569FB37009F1589 /* Archive.zip in Resources */ = {isa = PBXBuildFile; fileRef = E97117E62569FB37009F1589 /* Archive.zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +71,6 @@
 		E97117E32569FB37009F1589 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../manifest.json; sourceTree = "<group>"; };
 		E97117E42569FB37009F1589 /* readable_background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = readable_background.js; path = ../../readable_background.js; sourceTree = "<group>"; };
 		E97117E52569FB37009F1589 /* Readable */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readable; sourceTree = SOURCE_ROOT; };
-		E97117E62569FB37009F1589 /* Archive.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = Archive.zip; path = ../../Archive.zip; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +155,6 @@
 				E97117E32569FB37009F1589 /* manifest.json */,
 				E97117E42569FB37009F1589 /* readable_background.js */,
 				E97117E52569FB37009F1589 /* Readable */,
-				E97117E62569FB37009F1589 /* Archive.zip */,
 			);
 			name = Resources;
 			path = "Readable Extension";
@@ -252,7 +249,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E97117F02569FB37009F1589 /* Archive.zip in Resources */,
 				E97117EE2569FB37009F1589 /* readable_background.js in Resources */,
 				E97117E92569FB37009F1589 /* README.md in Resources */,
 				E97117ED2569FB37009F1589 /* manifest.json in Resources */,
