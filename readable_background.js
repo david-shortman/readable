@@ -1,4 +1,6 @@
-const browser = window['browser'] || chrome;
+const isChrome = !window['browser'] && !!chrome;
+console.log(isChrome);
+const browser = isChrome ? chrome : window['browser'];
 
 function onGotCurrentTab(currentTabOrTabs) {
     let currentTabId;
@@ -13,7 +15,7 @@ function onGotCurrentTab(currentTabOrTabs) {
 }
 
 setInterval(function () {
-    if (browser.tabs.getSelected) {
+    if (isChrome) {
         browser.tabs.getSelected(onGotCurrentTab);
     } else {
         browser.tabs.query({ active: true }).then(onGotCurrentTab)
