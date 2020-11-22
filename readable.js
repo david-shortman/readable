@@ -1,5 +1,4 @@
-/** Adapted from https://stackoverflow.com/a/41886794/11087018 */
-const replaceOnDocument = (replacements, keys, { target = document.body } = {}) => {
+const replaceOnActiveTab = (replacements, keys, { target = document.body } = {}) => {
   [
     target,
     ...target.querySelectorAll("*:not(script):not(noscript):not(style)")
@@ -22,14 +21,21 @@ const replaceOnDocument = (replacements, keys, { target = document.body } = {}) 
 
 let characterMap;
 
-function updatePage(event) {
-  replaceOnDocument(characterMap);
+const browser = window['browser'] || chrome;
+
+function updatePage() {
+  replaceOnActiveTab(characterMap, Object.keys(characterMap));
 }
 
-fetch('https://raw.githubusercontent.com/david-shortman/readable/main/alphabets/character-map.json').then(data => data.json()).then(res => {
-  characterMap = res;
-  replaceOnDocument(characterMap, Object.keys(characterMap));
-
-  // TODO: update the page when page text content has changed
-  setInterval(updatePage, 5000);
+browser.runtime.onMessage.addListener(function (message) {
+  if (message === 'updateCurrentTab') {
+    if (characterMap) {
+      replaceOnActiveTab(characterMap, Object.keys(characterMap));
+    } else {
+      fetch('https://raw.githubusercontent.com/david-shortman/readable/main/alphabets/character-map.json').then(data => data.json()).then(res => {
+        characterMap = res;
+        replaceOnActiveTab(characterMap, Object.keys(characterMap));
+      });
+    }
+  }
 });
