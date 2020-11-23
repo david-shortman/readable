@@ -4,10 +4,24 @@
 
 Readable is a Web Extension that converts "custom font" text on webpages to standard characters, which can be read as intended by screen readers.
 
-[Example on Extension Homepage](https://readableextension.app)
+[The Readable homepage](https://readableextension.app) has example text for comparison.
 
 ## Installation
 
-The extension is undergoing review in the Chrome Web Store, the Mozilla add-ons distribution site, and the macOS App Store.
+### Firefox
+
+Install the add on from [the Firefox Add On site](https://addons.mozilla.org/en-US/firefox/addon/readable/).
+
+### macOS Safari
+
+The extension is undergoing review in the macOS App Store.
+
+### iOS Safari
+
+[This Shortcut](https://www.icloud.com/shortcuts/d02766ddf68045e59d47b603e0e6b58b) can be used to convert the contents of a page once on iOS Safari.
+
+### Chrome
+
+The extension is undergoing review in the Chrome Web Store.
 
 The source code can be downloaded and then [imported as an unpacked extension into Chrome](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/).
