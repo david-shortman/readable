@@ -22,6 +22,4 @@ The extension is undergoing review in the macOS App Store.
 
 ### Chrome
 
-The extension is undergoing review in the Chrome Web Store.
-
-The source code can be downloaded and then [imported as an unpacked extension into Chrome](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/).
+Install the add on from the [Chrome Web Store](https://chrome.google.com/webstore/detail/readable/bmefgaahlikpnkoojlehnggcicppiaaf).
